@@ -1,7 +1,7 @@
+require 'pry'
+
 class Triangle
   # write code here
-
-  attr_accessor :equilateral, :isosceles, :scalene
 
   @sides = []
 
@@ -38,16 +38,19 @@ class Triangle
 
   def kind
     if @sides.uniq.size <= 1
-      :equilateral
-    elsif @sides.uniq.size == 2
-      :isosceles
-    else
-      :scalene
+      puts "Equal"
     end
 
+    if @sides.uniq.size == 2
+      puts "Iso"
+    end
+
+    puts "Scalene"
   end
 
   class TriangleError < StandardError
   end
 
+  binding.pry
 end
+
